@@ -8,7 +8,7 @@ import javax.jms.*;
  * @author tanglei
  */
 public class JmsProducer_persistent {
-    public static final String ACTIVEMQ_URL = "tcp://192.168.43.166:61616";
+    public static final String ACTIVEMQ_URL = "tcp://121.199.40.167:61616";
     public static final String QUEUE_NAME = "queue01";
 
 
@@ -25,7 +25,8 @@ public class JmsProducer_persistent {
         Queue queue = session.createQueue(QUEUE_NAME);
         //5.创建消息的生产者
         MessageProducer messageProducer = session.createProducer(queue);
-
+        //设置持久化
+        //messageProducer.setDeliveryMode(DeliveryMode.PERSISTENT);
         /**
          * 队列默认就是持久化 事务的开启必须去提交
          * createSession(1,2)   两个参数  一个是是否开始事务(boolean),一个是的是否签收(自动签收和手动签收)
@@ -36,6 +37,14 @@ public class JmsProducer_persistent {
             //7.创建消息
             TextMessage textMessage = session.createTextMessage("msgListener---" + i);
             //textMessage.setStringProperty("co1","vip");
+
+            //设置存活时间
+            //textMessage.setJMSDeliveryMode(0);
+            //设置唯一标识
+            //textMessage.setJMSMessageID();
+            //可以设置消息在一定时间后过期.默认永不过期
+            //textMessage.setJMSExpiration();
+
             //8.通过messageProducer发送给mq
             messageProducer.send(textMessage);
 

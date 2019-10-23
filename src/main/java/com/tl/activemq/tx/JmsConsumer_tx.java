@@ -11,7 +11,7 @@ import java.io.IOException;
  * 事务必须提交   每个事务就是一个执行单元 要么一起成功,要么一起失败
  */
 public class JmsConsumer_tx {
-    public static final String ACTIVEMQ_URL = "tcp://192.168.43.166:61616";
+    public static final String ACTIVEMQ_URL = "tcp://121.199.40.167:61616";
     public static final String QUEUE_NAME = "queue01";
 
     public static void main(String[] args) throws JMSException, IOException {
@@ -36,7 +36,8 @@ public class JmsConsumer_tx {
                 TextMessage textMessage = (TextMessage)message;
                 try {
                     System.out.println("****消费者接收到textMessage消息:"+textMessage.getText());
-
+                    //手动签收
+                    //textMessage.acknowledge();
                 } catch (JMSException e) {
                     e.printStackTrace();
                 }

@@ -8,7 +8,7 @@ import javax.jms.*;
  * @author tanglei
  */
 public class JmsConsumer_topic_two {
-    public static final String ACTIVEMQ_URL = "tcp://192.168.43.166:61616";
+    public static final String ACTIVEMQ_URL = "tcp://121.199.40.167:61616";
     public static final String TOPIC_NAME = "topic_name";
     public static void main(String[] args) throws Exception{
         System.out.println("***我是2 号消费者");

@@ -8,7 +8,7 @@ import javax.jms.*;
  * @author tanglei
  */
 public class JmsProducer {
-    public static final String ACTIVEMQ_URL = "tcp://192.168.43.166:61616";
+    public static final String ACTIVEMQ_URL = "tcp://121.199.40.167:61616";
     public static final String QUEUE_NAME = "jdbc01";
 
     public static void main(String[] args) throws JMSException {

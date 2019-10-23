@@ -10,7 +10,7 @@ import java.io.IOException;
  * @date 2019/10/3  20:33
  */
 public class JmsConsumer_two {
-    public static final String ACTIVEMQ_URL = "tcp://192.168.43.166:61616";
+    public static final String ACTIVEMQ_URL = "tcp://121.199.40.167:61616";
     public static final String QUEUE_NAME = "queue01";
     public static void main(String[] args) throws IOException, JMSException {
         System.out.println("***我是2号消费者");
